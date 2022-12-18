@@ -23,12 +23,19 @@ function App() {
 
 
 
-        <div className="container mx-auto border-blue border-8 bg-blue-900/10 border-double py-4 text-center my-10">
-          <p>A fan made Amiibo Site that displays all available amiibos and gives a description of where they are from.</p>
+        <div className="container mx-auto ">
+          <p className="border-blue border-8 bg-blue-900/10 border-double py-4 text-center my-10">A fan made Amiibo Site that displays all available amiibos and gives a description of where they are from.</p>
+
+
+          <AmiiboCard />
+        
         </div>
 
 
-        <AmiiboCard />
+
+      
+
+        
 
     </div>
   );
