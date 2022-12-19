@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React from 'react';
+import React, {useState} from 'react';
 
 import AmiiboInfo from '../Model/AmiiboInfo';
 
 export default function AmiiboCard() {
 
+    const [data, setData] = useState([])
+
     function getAmiiboData() {
-        axios.get("https://www.amiiboapi.com/api/amiibo?name=mario").then(res => console.log(res.data)).catch(err => console.log(err))
+        axios.get("https://www.amiiboapi.com/api/amiibo?name=mario").then(res => setData(res.data.amiibo) ).catch(err => console.log(err))
     }
 
     return(
@@ -16,7 +18,7 @@ export default function AmiiboCard() {
             <p>Amiibo Card</p>
 
             <div className='my-10'>
-                <AmiiboInfo />
+                { data.length > 0 ? <AmiiboInfo data={data} /> : <div> Search A Amibo </div>}
             </div>
             
 
