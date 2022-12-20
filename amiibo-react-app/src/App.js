@@ -4,7 +4,7 @@ import Footer from "./Views/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col justify-between h-screen">
+    <div className="flex flex-col justify-between h-full">
         <header >
 
         </header>
@@ -24,7 +24,7 @@ function App() {
 
 
 
-          <div className="container mx-auto h-full ">
+          <div className="container mx-auto min-h-screen ">
             <p className="border-blue border-8 bg-blue-900/80 border-double py-4 text-center my-10 mx-4 font-jost">A fan made Amiibo Site that displays all available amiibos and gives a description of where they are from.</p>
 
 

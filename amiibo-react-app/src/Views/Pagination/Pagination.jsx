@@ -34,7 +34,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
 <div>
 
     {/* show the posts, 10 posts at a time */}
-    <div className="dataContainer">
+    <div className="">
       {getPaginatedData().map((d, idx) => (
         <RenderComponent key={idx} data={d} />
       ))}
@@ -45,7 +45,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
         along with page numbers, in our case, 5 page
         numbers at a time
     */}
-    <div className="pagination">
+    <div className="flex flex-row justify-around">
       {/* previous button */}
       <button
         onClick={goToPreviousPage}
