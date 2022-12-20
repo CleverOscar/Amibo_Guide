@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import Pagination from './Pagination/Pagination';
 
 import AmiiboInfo from '../Model/AmiiboInfo';
 
@@ -8,13 +9,13 @@ export default function AmiiboCard() {
     const [data, setData] = useState([])
 
     function getAmiiboData() {
-        axios.get("https://www.amiiboapi.com/api/amiibo?name=mario").then(res => setData(res.data.amiibo) ).catch(err => console.log(err))
+        axios.get("https://www.amiiboapi.com/api/amiibo").then(res => setData(res.data.amiibo) ).catch(err => console.log(err))
     }
 
     return(
         <div>
             <div className='my-10 mx-auto text-center'>
-                { data.length > 0 ? <AmiiboInfo data={data} /> : <div> Search A Amibo </div>}
+                { data.length > 0 ? <Pagination data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <div> Search A Amibo </div>}
             </div>
             
 

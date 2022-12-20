@@ -9,7 +9,7 @@ function App() {
 
         </header>
 
-          <div className="flex flex-wrap flex-row items-center mx-auto justify-center shadow-xl border-b border-gray-900/20">
+          <div className="flex flex-wrap flex-row items-center mx-auto justify-center shadow-xl border-b border-gray-900/20 w-full">
             
             
 
@@ -24,7 +24,7 @@ function App() {
 
 
 
-          <div className="container mx-auto">
+          <div className="container mx-auto h-full ">
             <p className="border-blue border-8 bg-blue-900/80 border-double py-4 text-center my-10 mx-4 font-jost">A fan made Amiibo Site that displays all available amiibos and gives a description of where they are from.</p>
 
 
