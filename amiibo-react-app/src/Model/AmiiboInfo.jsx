@@ -5,11 +5,11 @@ export default function AmiiboInfo({data}) {
     
 
     return(
-        <div className='mx-4 md:mx-0 md:flex md:flex-col'>
-            <div className='my-10 bg-gray-500/30 shadow-xl border-2 border-black rounded-lg px-2  mx-auto' key={data.tail}>
+        <div className='mx-auto w-full md:mx-0 md:flex md:flex-col  border-2 '>
+            <div className='my-10 bg-gray-500/30 shadow-xl border-2 border-black rounded-lg p-4  mx-auto' key={data.tail}>
 
 
-                <img src={data.image} alt={data.character} className="mx-auto drop-shadow-2xl my-8"/>
+                <img src={data.image} alt={data.character} className="mx-auto w-auto drop-shadow-2xl  max-h-56"/>
                 <p className='text-center text-2xl font-jost underline'>{data.character}</p>
 
 
@@ -23,7 +23,7 @@ export default function AmiiboInfo({data}) {
                         </tr>
                     </thead>
 
-                <tbody>
+                <tbody className='font-semibold'>
                 <tr>
                         <td>United States</td>
                         <td>{data.release.na}</td>

@@ -14,8 +14,8 @@ export default function AmiiboCard() {
 
     return(
         <div>
-            <div className='my-10 mx-auto text-center'>
-                { data.length > 0 ? <Pagination data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <div> Search A Amibo </div>}
+            <div className='my-10 mx-auto text-center '>
+                { data.length > 0 ? <Pagination  data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <div> Search A Amibo </div>}
             </div>
             
 

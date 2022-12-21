@@ -34,7 +34,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
 <div>
 
     {/* show the posts, 10 posts at a time */}
-    <div className="">
+    <div className="sm:grid sm:grid-cols-2 sm:gap-4 mx-4 lg:grid-cols-3">
       {getPaginatedData().map((d, idx) => (
         <RenderComponent key={idx} data={d} />
       ))}
