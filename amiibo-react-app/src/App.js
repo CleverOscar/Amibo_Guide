@@ -13,10 +13,12 @@ function App() {
             
             
 
-            <img  src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Amiibo_logo.png" 
-                  alt="amiibo logo" 
-                  className="max-w-xs"
-                  />
+            <a href="/" >
+              <img  src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Amiibo_logo.png" 
+                    alt="amiibo logo" 
+                    className="max-w-xs"
+                    />
+            </a>
 
             <p className="text-5xl font-tit"> React App </p>
 
@@ -25,13 +27,7 @@ function App() {
 
 
           <div className="container mx-auto min-h-screen ">
-            <p className="border-blue border-8 bg-blue-900/80 border-double py-4 text-center my-10 mx-4 font-jost">A fan made Amiibo Site that displays all available amiibos and gives a description of where they are from.</p>
-
-
             <AmiiboCard />
-
-           
-          
           </div>
         
 

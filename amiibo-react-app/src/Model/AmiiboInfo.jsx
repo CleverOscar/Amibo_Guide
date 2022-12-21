@@ -5,7 +5,7 @@ export default function AmiiboInfo({data}) {
     
 
     return(
-        <div className='mx-auto w-full md:mx-0 md:flex md:flex-col  border-2 '>
+        <div className='mx-auto w-full md:mx-0 md:flex md:flex-col'>
             <div className='my-10 bg-gray-500/30 shadow-xl border-2 border-black rounded-lg p-4  mx-auto' key={data.tail}>
 
 
