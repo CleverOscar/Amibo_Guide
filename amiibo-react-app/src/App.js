@@ -1,13 +1,10 @@
-import AmiiboCard from "./Views/AmiiboCard";
-import Footer from "./Views/Footer";
+import AmiiboCard from "./Views/Amiibo/AmiiboCard";
+import Footer from "./Views/Footer/Footer";
 
 
 function App() {
   return (
     <div className="flex flex-col justify-between h-full">
-        <header >
-
-        </header>
 
           <div className="flex flex-wrap flex-row items-center mx-auto justify-center shadow-xl border-b border-gray-900/20 w-full">
             
@@ -27,7 +24,9 @@ function App() {
 
 
           <div className="container mx-auto min-h-screen ">
+            
             <AmiiboCard />
+
           </div>
         
 

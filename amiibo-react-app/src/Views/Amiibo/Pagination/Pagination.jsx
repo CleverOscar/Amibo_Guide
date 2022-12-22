@@ -49,7 +49,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
       {/* previous button */}
       <button
         onClick={goToPreviousPage}
-        className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+        className={`prev ${currentPage <= 1 ? 'hidden' : ''}`}
       >
         prev
       </button>
@@ -68,7 +68,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
       {/* next button */}
       <button
         onClick={goToNextPage}
-        className={`next ${currentPage === pages ? 'disabled' : ''}`}
+        className={`next ${currentPage >= pages ? 'hidden' : ''}`}
       >
         next
       </button>
