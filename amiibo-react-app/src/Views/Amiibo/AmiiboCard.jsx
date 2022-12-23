@@ -13,7 +13,8 @@ export default function AmiiboCard() {
     }
 
     function alphabeticalOrder(){
-        setData(data.sort(function (a,b){
+        
+        axios.get("https://www.amiiboapi.com/api/amiibo").then(res => setData(res.data.amiibo.sort(function (a,b){
             if (a.character < b.character) {
                 return -1;
               }
@@ -21,8 +22,13 @@ export default function AmiiboCard() {
                 return 1;
               }
               return 0;
-        }))
+        }))).catch(err => console.log(err))
+
+
     }
+
+
+
 
     return(
         <div>
@@ -35,7 +41,7 @@ export default function AmiiboCard() {
                     Fetch Amiibo Data
                 </button>
 
-                <button className='w-full bg-green-100' onClick={ alphabeticalOrder} >
+                <button className='w-full bg-green-100 hover:bg-green-500' onClick={ alphabeticalOrder} >
                     Sort By Alphabet
                 </button>
             </div>
