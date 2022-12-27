@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import Pagination from './Pagination/Pagination';
 
+import About from '../About/About';
+
 import AmiiboInfo from './AmiiboInfo';
 
 export default function AmiiboCard() {
@@ -27,23 +29,34 @@ export default function AmiiboCard() {
 
     }
 
+    function releaseDate(){
+       console.log('Released Date button')
+    }
+
 
 
 
     return(
         <div>
             <div className='my-10 mx-auto text-center '>
-                { data.length > 0 ? <Pagination  data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <div> Search A Amibo </div>}
+                { data.length > 0 ? <Pagination  data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <About />}
             </div>
             
-            <div className='mx-auto w-1/2 flex flex-row justify-between gap-5'>
+            <div className='mx-auto w-1/2 flex flex-col md:flex-row justify-between gap-5 '>
                 <button type="button" onClick={getAmiiboData} className='bg-gray-900/20 p-2 rounded-lg hover:bg-gray-900/80 w-full' >
                     Fetch Amiibo Data
                 </button>
 
-                <button className='w-full bg-green-100 hover:bg-green-500' onClick={ alphabeticalOrder} >
+                <button className='w-full bg-green-500 hover:bg-green-900 p-2 rounded-lg' onClick={ alphabeticalOrder} >
                     Sort By Alphabet
                 </button>
+
+                
+                <button className='w-full bg-green-500 hover:bg-green-900 p-2 rounded-lg' onClick={ releaseDate} >
+                    Release
+                </button>
+
+
             </div>
         </div>
     )
