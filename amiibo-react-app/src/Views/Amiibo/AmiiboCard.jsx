@@ -13,13 +13,33 @@ export default function AmiiboCard() {
     const [options, setOptions] = useState([
         {
             "label": "sort A-Z",
-            "value": 'sort A-Z'
+            "value": 'sort'
         },
         {
             "label": "release",
             "value": 'release'
         },
     ]);
+
+    function handleChange(e){
+        if(e.target.value === "sort"){
+            console.log("Sort has been selected")
+            sort()
+            
+        }
+    }
+
+    function sort(){
+        setData(data.sort(function (a,b){
+            if (a.character < b.character) {
+                return -1;
+              }
+              if (a.character > b.character) {
+                return 1;
+              }
+              return 0;
+        }))
+    }
 
 
     function getAmiiboData() {
@@ -41,9 +61,6 @@ export default function AmiiboCard() {
 
     }
 
-    function releaseDate(){
-       console.log('Released Date button')
-    }
 
     function sortByAlphabet(){
         data.amiibo.sort(function (a,b){
@@ -64,23 +81,24 @@ export default function AmiiboCard() {
             </div>
             
             <div className='mx-auto w-1/2 flex flex-col md:flex-row justify-between gap-5 '>
-                <button type="button" onClick={getAmiiboData} className='bg-gray-900/20 p-2 rounded-lg hover:bg-gray-900/80 w-full' >
-                    Fetch Amiibo Data
-                </button>
-
-                <button className='w-full bg-green-500 hover:bg-green-900 p-2 rounded-lg' onClick={ alphabeticalOrder} >
-                    Sort By Alphabet
-                </button>
-
                 
-                <button className='w-full bg-green-500 hover:bg-green-900 p-2 rounded-lg' onClick={ releaseDate} >
-                    Release
-                </button>
-
-
-                <select>
-                    {options.map(op => <option value={op.value}>{op.label}</option>)}
-                </select>
+                { data.length > 0 ? 
+                   
+                    <>
+                        
+                        <select onChange={handleChange} className="bg-gray-600/50 px-2 py-3 items-center mx-auto">
+                            <option selected disabled hidden>Change Filter</option>
+                            {options.map(op => <option value={op.value}>{op.label}</option>)}
+                        </select>
+                    </>
+                    :  
+                    <>
+                        <button type="button" onClick={getAmiiboData} className='bg-gray-900/20 p-2 rounded-lg hover:bg-gray-900/80 w-full'>
+                            Fetch Amiibo Data
+                        </button>
+                    </>
+                
+                }
 
             </div>
         </div>

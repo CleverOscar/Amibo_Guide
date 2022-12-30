@@ -45,7 +45,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
         along with page numbers, in our case, 5 page
         numbers at a time
     */}
-    <div className="flex flex-row justify-around">
+    <div className="flex flex-row justify-around text-2xl">
       {/* previous button */}
       <button
         onClick={goToPreviousPage}
@@ -59,7 +59,7 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
         <button
           key={index}
           onClick={changePage}
-          className={`paginationItem ${currentPage === item ? 'active' : null}`}
+          className={` paginationItem ${currentPage === item ? ' px-3 py-2 bg-gray-500/30 ' : null}`}
         >
           <span>{item}</span>
         </button>
