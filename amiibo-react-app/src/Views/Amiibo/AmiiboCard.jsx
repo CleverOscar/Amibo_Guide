@@ -10,6 +10,18 @@ export default function AmiiboCard() {
 
     const [data, setData] = useState([])
 
+    const [options, setOptions] = useState([
+        {
+            "label": "sort A-Z",
+            "value": 'sort A-Z'
+        },
+        {
+            "label": "release",
+            "value": 'release'
+        },
+    ]);
+
+
     function getAmiiboData() {
         axios.get("https://www.amiiboapi.com/api/amiibo").then(res => setData(res.data.amiibo) ).catch(err => console.log(err))
     }
@@ -33,8 +45,17 @@ export default function AmiiboCard() {
        console.log('Released Date button')
     }
 
-
-
+    function sortByAlphabet(){
+        data.amiibo.sort(function (a,b){
+            if (a.character < b.character) {
+                return -1;
+              }
+              if (a.character > b.character) {
+                return 1;
+              }
+              return 0;
+        })
+    }
 
     return(
         <div>
@@ -56,6 +77,10 @@ export default function AmiiboCard() {
                     Release
                 </button>
 
+
+                <select>
+                    {options.map(op => <option value={op.value}>{op.label}</option>)}
+                </select>
 
             </div>
         </div>
