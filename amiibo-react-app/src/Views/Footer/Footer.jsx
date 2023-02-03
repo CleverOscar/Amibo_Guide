@@ -8,7 +8,8 @@ export default function Footer(){
                         grid grid-cols-1 md:grid-cols-3 gap-4
                         justify-between 
                         border-2 border-black
-                        
+                        bg-gray-900
+                        text-white
                         '>
 
  
@@ -51,7 +52,7 @@ function Contribute(){
 
             <div className='flex flex-row gap-4'>
                     
-                <a href="https://github.com/CleverOscar/Amiibo_Guide" target="_blank" rel="noreferrer">
+                <a href="https://github.com/CleverOscar/Amiibo_Guide"  target="_blank" rel="noreferrer">
                     <img alt="github logo" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Github-circle_%28CoreUI_Icons_v1.0.0%29.svg/2048px-Github-circle_%28CoreUI_Icons_v1.0.0%29.svg.png'  className='w-fit max-h-8' />   
                 </a>
 
