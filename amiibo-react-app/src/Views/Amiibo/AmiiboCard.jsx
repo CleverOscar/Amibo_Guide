@@ -1,8 +1,5 @@
-import axios from 'axios';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Pagination from './Pagination/Pagination';
-
-import About from '../About/About';
 
 import AmiiboInfo from './AmiiboInfo';
 
@@ -63,17 +60,17 @@ export default function AmiiboCard({data}) {
     // }
 
 
-    function sortByAlphabet(){
-        return data.amiibo.sort(function (a,b){
-            if (a.character < b.character) {
-                return -1;
-              }
-              if (a.character > b.character) {
-                return 1;
-              }
-              return 0;
-        })
-    }
+    // function sortByAlphabet(){
+    //     return data.amiibo.sort(function (a,b){
+    //         if (a.character < b.character) {
+    //             return -1;
+    //           }
+    //           if (a.character > b.character) {
+    //             return 1;
+    //           }
+    //           return 0;
+    //     })
+    // }
 
     return(
         <div className='px-4 md:px-0'>
