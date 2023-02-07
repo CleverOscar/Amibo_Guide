@@ -3,13 +3,15 @@ import React from 'react';
 export default function Footer(){
 
     return(
-        <div className='px-5 py-20  
+        <div className='bg-gray-900'>
+            <div className='py-20  
                         h-full 
-                        grid grid-cols-1 md:grid-cols-3 gap-4
-                        justify-between 
-                        border-2 border-black
-                        bg-gray-900
+                        grid grid-cols-1 md:grid-cols-3 
+                        container mx-auto
                         text-white
+                        text-base md:text-xl
+                        px-5 
+                        md:px-0
                         '>
 
  
@@ -17,10 +19,8 @@ export default function Footer(){
 
                 <Contribute />
             
-                <TechStack />
-               
-
-            
+                <TechStack />    
+            </div>
         </div>
 
     )
@@ -28,9 +28,9 @@ export default function Footer(){
 
 function About(){
 
-    const oscar = <a className='text-link' href="https://cleveroscar.dev/" target="_blank" rel="noreferrer" >Oscar Ortiz</a>
+    const oscar = <a className='text-blue-600' href="https://cleveroscar.dev/" target="_blank" rel="noreferrer" >Oscar Ortiz</a>
 
-    const navi = < a className='text-link' href="https://www.n3evin.com/" target="_blank" rel="noreferrer">Nevin Vu</a>
+    const navi = < a className='text-blue-600' href="https://www.n3evin.com/" target="_blank" rel="noreferrer">Nevin Vu</a>
 
     return(
         <div>

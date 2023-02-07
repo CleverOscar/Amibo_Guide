@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Pagination from './Pagination/Pagination';
 
-import AmiiboInfo from './AmiiboInfo';
+import AmiiboInfo from './Pagination/AmiiboInfo';
 
 export default function AmiiboCard({data}) {
 
@@ -80,7 +80,6 @@ export default function AmiiboCard({data}) {
                 { data.length > 0 ? 
                    
                     <>
-                        
                         <select onChange={handleChange} className="bg-gray-600/50 px-2 py-3 items-center mx-auto">
                             <option selected disabled value> Change Filter</option>
                             {options.map(op => <option key={op.label} value={op.value}>{op.label}</option>)}
@@ -98,7 +97,7 @@ export default function AmiiboCard({data}) {
             </div>
 
             <div className='my-10 mx-auto text-center '>
-                { data.length > 0 ? <Pagination  data={data} RenderComponent={AmiiboInfo} pageLimit={5} dataLimit={10} /> : <></>}
+                { data.length > 0 ? <Pagination  data={data} RenderComponent={AmiiboInfo} pagesShown={5} dataPerPage={9} /> : <></>}
             </div>
         </div>
     )

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
 
-export default function Pagination({data, RenderComponent, pageLimit, dataLimit}){
+export default function Pagination({data, RenderComponent, pagesShown, dataPerPage}){
 
-    const [pages] = useState(Math.round(data.length / dataLimit));
+    const [pages] = useState(Math.round(data.length / dataPerPage));
     const [currentPage, setCurrentPage] = useState(1);
 
     function goToNextPage() {
@@ -21,19 +21,19 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
 
     const getPaginatedData = () => {
       
-      const startIndex = (currentPage * dataLimit) - dataLimit;
-      const endIndex = startIndex + dataLimit;
+      const startIndex = (currentPage * dataPerPage) - dataPerPage;
+      const endIndex = startIndex + dataPerPage;
       
       return data.slice(startIndex, endIndex);
     };
 
     const getPaginationGroup = () => {
-        let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-        return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
+        let start = Math.floor((currentPage - 1) / pagesShown) * pagesShown;
+        return new Array(pagesShown).fill().map((_, idx) => start + idx + 1);
     };
 
     return(
-      <div>
+      <div className=' '>
 
         {/* show the posts, 10 posts at a time */}
         <div className="sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
@@ -47,11 +47,11 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
             along with page numbers, in our case, 5 page
             numbers at a time
         */}
-        <div className="flex flex-row justify-around text-2xl">
+        <div className="flex flex-row justify-between text-xl my-10">
           {/* previous button */}
           <button
             onClick={goToPreviousPage}
-            className={`prev ${currentPage <= 1 ? 'hidden' : ''}`}
+            className={`prev ${currentPage <= 1 ? 'hidden' : 'bg-gray-900 text-white px-4 border-black border-2'}`}
           >
             prev
           </button>
@@ -61,16 +61,16 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
             <button
               key={index}
               onClick={changePage}
-              className={` paginationItem ${currentPage === item ? ' px-3 py-2 bg-gray-500/30 rounded-full' : null}`}
+              className={` ${currentPage === item ? 'bg-[#00a2ff]/80 rounded-full border-black border-2' : 'bg-gray-900 text-white rounded-full border-black border-2'} py-2`}
             >
-              <span>{item}</span>
+              <span className='mx-4 '>{item}</span>
             </button>
           ))}
 
           {/* next button */}
           <button
             onClick={goToNextPage}
-            className={`next ${currentPage >= pages ? 'hidden' : ''}`}
+            className={`next ${currentPage >= pages ? 'hidden' : 'bg-gray-900 text-white px-4 border-black border-2'}`}
           >
             next
           </button>
